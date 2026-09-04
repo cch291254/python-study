@@ -1,0 +1,4 @@
+fruits = ["苹果", "香蕉", "橘子", "葡萄", "西瓜"]
+fruits = ["苹果", "香蕉", "橘子", "葡萄", "西瓜"]
+for num, fruit in enumerate(fruits,):
+    print(f"第{num+1}个水果：{fruit}")
