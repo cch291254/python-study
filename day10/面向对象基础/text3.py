@@ -19,9 +19,12 @@ class Employee:
             bonus = 0
         full_bonus=FULL_BONUS if self.attend==FULL_DAY else 0
         return attend_pay+full_bonus+bonus
-
+    def  calc_annual_salary(self,months=12):
+        monthly=self.calc_salary()
+        return monthly * months
 e1 = Employee("张三", 8000, 22, "A")
-print(f"{e1.name} 的月薪：{e1.calc_salary():.0f}")  
+print(f"{e1.name} 的月薪：{e1.calc_salary():.0f}")
+print(f"年薪：{e1.calc_annual_salary():.0f}")
+print(f"11月薪：{e1.calc_annual_salary(11):.0f}")  
 e2 = Employee("李四", 10000, 20, "B")
 print(f"{e2.name} 的月薪：{e2.calc_salary():.0f}")  
-
