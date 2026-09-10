@@ -7,9 +7,11 @@ class Employee:
         self._base = base
         self._attend = attend
         self._grade = grade
+    def __str__(self):
+        return f"员工{self.name}：底薪{self._base}，出勤{self._attend}天，绩效{self._grade}"
     def calc_salary(self):
-        daily=self._base/Employee.FULL_DAY
-        attend_pay=daily*self._attend
+        daily_pay=self._base/Employee.FULL_DAY
+        attend_pay=daily_pay*self._attend
         if self._grade=="A":
             bonus=self._base*0.3
         elif self._grade == "B":
@@ -67,3 +69,19 @@ while True:
         print(f"{emp.name}：月薪{emp.calc_salary():.0f}，年薪{emp.calc_annual_salary():.0f}")
     else:
         print("查无此人")
+
+class Intern(Employee):
+    def __init__(self,name,attend,daily_pay=120):
+        super().__init__(name,0,attend,"实习")
+        self._daily_pay=daily_pay
+    def calc_salary(self):
+        return self._attend*self._daily_pay
+e1 = Employee("张三", 8000, 22, "A")
+i1 = Intern("小李", 20)             
+i2 = Intern("小王", 18, 150)
+print(e1.calc_salary())
+print(i1.calc_salary())
+print(i2.calc_salary())
+print(i1.name)
+print(i1)
+print(i1.calc_annual_salary())
