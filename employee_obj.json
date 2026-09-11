@@ -1,0 +1,32 @@
+[
+  {
+    "name": "张三",
+    "base": 8000,
+    "attend": 22,
+    "grade": "A"
+  },
+  {
+    "name": "李四",
+    "base": 10000,
+    "attend": 22,
+    "grade": "B"
+  },
+  {
+    "name": "王五",
+    "base": 6000,
+    "attend": 22,
+    "grade": "C"
+  },
+  {
+    "name": "赵六",
+    "base": 9000,
+    "attend": 18,
+    "grade": "A"
+  },
+  {
+    "name": "钱七",
+    "base": 7000,
+    "attend": 22,
+    "grade": "D"
+  }
+]
