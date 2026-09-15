@@ -1,7 +1,7 @@
 
 
 
-from business import find_employee,add_employee,update_employee,delete_employee
+from business import find_employee,add_employee,update_employee,delete_employee,calculate_salary
 employees = [
     {"id": 1, "name": "张三", "base": 8000},
     {"id": 2, "name": "李四", "base": 10000}
@@ -60,3 +60,17 @@ def test_delete_employee_not_found():
     assert result is False
     assert len(employees)==2
     assert employees[1]["name"]=="李四"
+def test_calculate_salary():
+    employee = {"id": 1, "name": "张三", "base": 8000}
+
+    result = calculate_salary(employee, 500)
+
+    assert result == 8500
+
+
+def test_calculate_salary_without_bonus():
+    employee = {"id": 1, "name": "张三", "base": 8000}
+
+    result = calculate_salary(employee)
+
+    assert result == 8000

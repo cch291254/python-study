@@ -22,4 +22,5 @@ def delete_employee(employees,employee_id):
         return False
     employees.remove(employee)
     return True
-
+def calculate_salary(employee,bonus=0):
+    return employee["base"]+bonus
