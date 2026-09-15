@@ -5,12 +5,17 @@ def find_employee(employees,employee_id):
             return employee
     return None
 def add_employee(employees,employee):
+    if employee["base"]<0:
+        return False
     if find_employee(employees,employee["id"]):
         return False
     employees.append(employee)
     return True
 def update_employee(employees,employee_id,new_name,new_base):
+    if new_base<0:
+        return False
     employee=find_employee(employees,employee_id)
+
     if employee is None:
         return False
     employee["name"]=new_name

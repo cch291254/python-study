@@ -1,6 +1,7 @@
 
 
 
+from unittest import result
 from business import find_employee,add_employee,update_employee,delete_employee,calculate_salary
 employees = [
     {"id": 1, "name": "张三", "base": 8000},
@@ -74,3 +75,19 @@ def test_calculate_salary_without_bonus():
     result = calculate_salary(employee)
 
     assert result == 8000
+def test_add_employee_negative_base():
+    employees = [
+    {"id": 1, "name": "张三", "base": 8000},
+    {"id": 2, "name": "李四", "base": 10000}]
+    new_employee={"id":5,"name":"钱七","base":-100}
+    result=add_employee(employees,new_employee)
+    assert result is False
+    assert len(employees)==2
+def test_update_employee_negative_base():
+    employees = [
+        {"id": 1, "name": "张三", "base": 8000},
+        {"id": 3, "name": "王五", "base": 6500}]
+    result=update_employee(employees,1,"zhangsan",-100)
+    assert result is False
+    assert employees[0]["base"]==8000
+    assert employees[0]["name"]=="张三"
