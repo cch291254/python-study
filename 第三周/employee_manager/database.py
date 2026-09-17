@@ -1,6 +1,7 @@
 import sqlite3
+from pathlib import Path
 
-DB_FILE="employees.db"
+DB_FILE=Path(__file__).resolve().parent/"employees.db"
 def init_db():
     connection=sqlite3.connect(DB_FILE)
     cursor=connection.cursor()
