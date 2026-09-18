@@ -1,3 +1,4 @@
+#SQL 咨询、排序与统计练习
 import sqlite3
 conn = sqlite3.connect(":memory:")
 cursor = conn.cursor()
