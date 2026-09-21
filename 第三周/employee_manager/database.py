@@ -26,6 +26,7 @@ def add_employee(employee_id,name,base):
         connection.commit()
         return True
     except sqlite3.IntegrityError:
+        connection.rollback()
         return False
     finally:
         connection.close()

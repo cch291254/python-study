@@ -18,6 +18,7 @@
 - `database.py`：SQLite 数据库操作
 - `business.py`：工资计算等业务规则
 - `storage.py`：JSON 文件存储功能
+- `main.py`:json版本的运行界面和用户输入
 - `tests/`：pytest 自动化测试
 
 ## 运行项目
@@ -27,8 +28,18 @@
 ```powershell
 python main_db.py
 ```
+其他可用版本
+```powwershell
+python main.py
+```
 
-程序会自动创建 SQLite 数据库文件。
+程序会自动创建 SQLite 数据库文件或者json文件。
+
+## 安装依赖
+
+```powershell
+python -m pip install -r requirements.txt
+```
 
 ## 运行测试
 
@@ -50,3 +61,8 @@ python -m pytest -v
 - pytest
 - Git
 
+## 版本说明
+
+- main.py + storage.py：早期JSON版本
+- main_db.py + database.py：最终SQLite版本
+- business.py：两个版本共享
